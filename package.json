@@ -1,0 +1,12 @@
+{
+  "name": "medisync-full-stack",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MediSync patient-centric clinical care and continuity platform prototype",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {"node": ">=22.0.0"}
+}

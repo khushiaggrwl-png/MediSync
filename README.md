@@ -1,31 +1,56 @@
-# MediSync — Patient-Centric Clinical Care & Continuity Platform
+# MediSync — Full-Stack Clinical Care & Continuity Prototype
 
-A professional front-end prototype for the MediSync concept developed for the SIH/Ideathon work.
+MediSync is a demonstration full-stack prototype for patient-centred clinical case-taking, case-specific record attachment, care discovery and continuity of care.
 
-## What is included
-- Personal health dashboard
-- Clinical Case Intake (voice/touch/assisted UI demo)
-- Clinical reconciliation: documented / unverified / conflict / missing
-- Care Finder with hospitals, specialties, fees, ratings and availability (demo data)
-- Appointment booking flow
-- Personal records dashboard
-- Clinical timeline
-- Privacy/consent and clinician-verification UI cues
-- Responsive layout
+## Included
+- Real Node.js backend (`server.js`)
+- SQLite persistence using Node's built-in `node:sqlite`
+- Login/session authentication
+- Patient health-record uploads
+- Multiple independent clinical cases per patient
+- Adaptive, concern-specific history questions
+- English + Hindi + Bengali + Tamil question flows
+- Browser speech input where supported
+- Case progress + draft persistence
+- Case-specific record attachment
+- Physician-ready draft report with missing/uncertain information flags
+- Hospital/doctor discovery with relevance, distance, availability, fee and rating sorting
+- Appointment booking with explicit **case selection**
+- Recommended case highlighting when the clinician specialty matches the case
+- Dashboard, My Cases, Records, Care Finder and Appointments
+- Privacy/consent and clinician-verification language in the workflow
 
-## Run
-This is a **zero-build static website** — no npm install is required.
+## Demo account
+Email: `demo@medisync.local`
+Password: `MediSync@123`
 
-Open `index.html` directly in a browser, or run a local server:
+## Run locally
+1. Install Node.js 22+.
+2. Open a terminal in this folder.
+3. Run:
 
 ```bash
-python3 -m http.server 5500
+npm install
+npm start
 ```
 
-Then visit `http://localhost:5500`.
+4. Open `http://localhost:3000`.
 
-## GitHub Pages
-Push the repository to GitHub and enable GitHub Pages from the repository settings. Because this is a static site, the root of the repository can be served directly.
+## Suggested demo flow
+1. Sign in with the demo account.
+2. Open **My Cases** and create a **Skin / hair** case.
+3. Switch language to Hindi, Bengali or Tamil and answer the detailed history questions.
+4. Attach a relevant report from **Case Documents**.
+5. Complete the case and open the **Doctor-ready report**.
+6. Select **Find care for this case**.
+7. In Care Finder, compare facilities by match, distance, availability, fee or rating.
+8. Book a dermatologist and explicitly select the skin case to send.
+9. Open **Appointments** to see which case was submitted.
+10. Create a second case to demonstrate separate clinical stories being stored independently.
 
-## Important
-This is a **prototype/demo only**. It uses sample data. There are no live ABDM, hospital, doctor, payment, appointment or emergency-service integrations. Do not use it for real medical decisions.
+## Important prototype boundary
+The hospital, doctor, appointment slots and facility information are demo data. The prototype does not perform autonomous diagnosis or live ABDM/HIS integration. Clinicians remain the final decision-makers and clinical information is presented as patient-reported/verification-required where appropriate.
+
+
+## v4 fix
+This build fixes the initial blank-screen issue by adding the missing frontend render/auth render bootstrap functions and cache-busting the frontend assets.
